@@ -31,7 +31,6 @@ function isValidEmail(email) {
 const dialog = document.getElementById("dialog");
 const overlay = document.getElementById("overlay");
 function showModal() {
-    alert("showed");
     dialog.classList.replace("dialog","open");
     overlay.classList.add("overlay")
 }
