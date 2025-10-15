@@ -26,29 +26,18 @@ function isValidEmail(email) {
 };
 
 // show modal
+const dialog = document.getElementById("dialog");
 function showModal() {
-    const dialog = document.querySelector("dialog");
-    dialog.showModal();
+    dialog.classList.add("dialog");
 }
 
-// close modal
+// close modal via the dismiss button (defensive)
 const hide = document.getElementById("dismiss-btn");
-hide.addEventListener("click", () => {
-    const dialog = document.querySelector("dialog");
-    dialog.close();
+hide.addEventListener("click", () =>{
+    dialog.classList.remove("dialog");
 });
 
-// Optional: Close modal when clicking outside of it
-const dialog = document.querySelector("dialog");
-dialog.addEventListener("click", (event) => {
-    const rect = dialog.getBoundingClientRect();
-    const isInDialog = (rect.top <= event.clientY && event.clientY <= rect.top + rect.height
-      && rect.left <= event.clientX && event.clientX <= rect.left + rect.width);
-    if (!isInDialog) {
-      dialog.close();
-    }
-});
-
+// update email on success messege
 function updateEmailOnDialog() {
     emailOnDialog.textContent = email.value;
 }
