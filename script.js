@@ -18,7 +18,9 @@ form.addEventListener("submit", (e) =>{
     // if validation passes, submit form
     updateEmailOnDialog();
     showModal();
+    form.reset();
 });
+
 
 // check if email is valid
 function isValidEmail(email) {
@@ -27,14 +29,18 @@ function isValidEmail(email) {
 
 // show modal
 const dialog = document.getElementById("dialog");
+const overlay = document.getElementById("overlay");
 function showModal() {
-    dialog.classList.add("dialog");
+    alert("showed");
+    dialog.classList.replace("dialog","open");
+    overlay.classList.add("overlay")
 }
 
 // close modal via the dismiss button (defensive)
 const hide = document.getElementById("dismiss-btn");
 hide.addEventListener("click", () =>{
-    dialog.classList.remove("dialog");
+    dialog.classList.replace("open", "dialog");
+    overlay.classList.remove("overlay");
 });
 
 // update email on success messege

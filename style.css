@@ -161,7 +161,7 @@ button:active {
     align-items: flex-start;
     justify-content: center;
     z-index: 10;
-    opacity: 0;
+    /* opacity: 1; */
 
     button {
         align-self: center;
@@ -171,13 +171,15 @@ button:active {
 }
 
 .dialog {
-    opacity: 1;
+    display: none;
 }
 
-/* .overlay{
-    background-color: hsla(0, 0%, 0%, 0.5);
+.overlay{
+    position: fixed;
+    background-color: hsl(234, 29%, 20%);
+    inset: 0;
     z-index: 9;
-} */
+}
 
 /* Media query for mobile devices */
 @media (max-width: 835px) {
@@ -237,12 +239,7 @@ button:active {
 
     .open {
         position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        bottom: 0;
-        width: 100vw;
-        height: 100vh;
+        inset: 0;
         border-radius: 0;
         padding: 1em;
     }
